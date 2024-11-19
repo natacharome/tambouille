@@ -1,1 +1,42 @@
-<p>recipe-card works!</p>
+<div class="w-full cursor-pointer" (click)="navigateToRecipe(id)">
+  <div
+    class="aspect-[4/3] w-full overflow-hidden rounded-lg shadow-md bg-gray-200"
+  >
+    @if (recipeImage) {
+    <img
+      [src]="recipeImage"
+      [alt]="recipeTitle"
+      class="w-full h-full object-cover"
+    />
+    } @else {
+    <div class="w-full h-full flex items-center justify-center">
+      <img
+        src="https://placehold.co/400x300"
+        alt="placeholder"
+        class="w-full h-full object-cover"
+      />
+    </div>
+    }
+  </div>
+  <div class="mt-2">
+    <h2 class="text-tambouille text-base font-bold line-clamp-2">
+      {{ recipeTitle }}
+    </h2>
+    <div class="flex items-center mt-1">
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        class="w-4 h-4 text-tambouille mr-2"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="2"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+      >
+        <circle cx="12" cy="12" r="10"></circle>
+        <polyline points="12 6 12 12 16 14"></polyline>
+      </svg>
+      <p class="text-sm text-tambouille">{{ time }}</p>
+    </div>
+  </div>
+</div>

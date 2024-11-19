@@ -1,1 +1,22 @@
-<p>season-card works!</p>
+<div
+  class="p-6 rounded-lg mt-5"
+  [ngClass]="{
+    'bg-autumn': currentSeason === 'automne',
+    'bg-winter': currentSeason === 'hiver',
+    'bg-summer': currentSeason === 'ete',
+    'bg-spring': currentSeason === 'printemps',
+}"
+>
+  <div class="flex justify-between">
+    <div class="flex flex-col mr-3">
+      <h2 class="">Saison en cours:</h2>
+      <h3 class="text-4xl tracking-widest text-tambouille font-bold">
+        {{ currentSeason | uppercase }}
+      </h3>
+    </div>
+
+    <div>
+      <img src="../../../../assets/svg/leaf.png" alt="leaf" />
+    </div>
+  </div>
+</div>

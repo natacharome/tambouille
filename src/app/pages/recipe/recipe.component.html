@@ -1,0 +1,48 @@
+<div class="sm:flex sm:h-screen sm:overflow-hidden">
+  <div class="fixed top-4 left-4 z-10 sm:absolute sm:top-4 sm:left-4">
+    <img
+      class="cursor-pointer"
+      src="../../../assets/svg/arrow-left.svg"
+      alt="arrow"
+      (click)="goBack()"
+    />
+  </div>
+  @if (recipe$ | async; as recipe) {
+  <div class="sm:w-1/2 sm:h-screen sm:fixed sm:left-0 sm:top-0">
+    <img
+      [src]="recipe.image"
+      alt="image"
+      class="w-full h-64 object-cover sm:h-full"
+    />
+  </div>
+  <div class="sm:w-1/2 sm:ml-[50%] sm:h-screen sm:overflow-y-auto bg-white p-5">
+    <div class="flex flex-col">
+      <h3 class="text-3xl font-extrabold mb-5">{{ recipe.title }}</h3>
+      <div class="flex flex-wrap gap-2 mb-7">
+        @for (tag of recipe.tags; track tag) {
+        <app-tag [tag]="tag"></app-tag>
+        }
+      </div>
+    </div>
+    <div class="mb-7">
+      <h5 class="font-bold mb-2">Ingrédients</h5>
+      @for (ingredient of recipe.ingredients; track ingredient) {
+      <div class="flex items-center mb-2">
+        <span
+          class="h-3 w-3 rounded-full bg-tambouille-secondary-50 mr-2"
+        ></span>
+        <span>{{ ingredient }}</span>
+      </div>
+      }
+    </div>
+    <div>
+      <h5 class="font-bold mb-2">Préparation</h5>
+      <div class="flex flex-col gap-4">
+        @for (step of recipe.instructions; track step.step) {
+        <app-instruction-card [step]="step"></app-instruction-card>
+        }
+      </div>
+    </div>
+  </div>
+  }
+</div>

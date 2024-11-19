@@ -1,1 +1,56 @@
-<p>header works!</p>
+<div class="flex justify-between items-center">
+  <div>
+    <img src="../../../../assets/logo.svg" alt="logo" />
+  </div>
+  <div>
+    <img
+      src="../../../../assets/svg/menu-burger.svg"
+      alt="menu"
+      (click)="toggleMenu()"
+    />
+  </div>
+</div>
+@if(menuVisible) {
+<div class="flex flex-col h-screen w-screen bg-white absolute top-0 left-0">
+  <div (click)="toggleMenu()" class="flex justify-end">
+    <div class="mt-7 mr-7">
+      <img src="../../../../assets/svg/close.svg" alt="close" />
+    </div>
+  </div>
+  <div class="flex flex-col px-10">
+    <div
+      class="flex border-b-2 border-tambouille-gray-100 p-6 items-center justify-between"
+    >
+      <img class="w-24" src="../../../../assets/image-1.jpg" alt="image" />
+      <p>Recettes</p>
+      <img
+        class="transform transition-transform duration-300 ease-in-out group-hover:translate-x-1"
+        src="../../../../assets/svg/arrow-right.svg"
+        alt="arrow"
+      />
+    </div>
+    <div
+      class="flex border-b-2 border-tambouille-gray-100 p-6 items-center justify-between"
+    >
+      <img class="w-24" src="../../../../assets/image-1.jpg" alt="image" />
+      <p>Recettes</p>
+      <img
+        class="transform transition-transform duration-300 ease-in-out group-hover:translate-x-1"
+        src="../../../../assets/svg/arrow-right.svg"
+        alt="arrow"
+      />
+    </div>
+    <div
+      class="flex border-b-2 border-tambouille-gray-100 p-6 items-center justify-between"
+    >
+      <img class="w-24" src="../../../../assets/image-1.jpg" alt="image" />
+      <p>Recettes</p>
+      <img
+        class="transform transition-transform duration-300 ease-in-out group-hover:translate-x-1"
+        src="../../../../assets/svg/arrow-right.svg"
+        alt="arrow"
+      />
+    </div>
+  </div>
+</div>
+}

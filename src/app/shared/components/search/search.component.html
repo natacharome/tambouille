@@ -1,1 +1,21 @@
-<p>search works!</p>
+<div class="mt-5">
+  <form [formGroup]="searchForm" class="bg-tambouille-gray-50 rounded-lg">
+    <div class="flex justify-between">
+      <div class="flex p-3">
+        <img src="../../../../assets/svg/search.svg" alt="search" />
+        <input
+          class="bg-tambouille-gray-50 ml-2"
+          type="text"
+          name="search"
+          placeholder="Chercher une recette"
+          formControlName="search"
+        />
+      </div>
+      <div
+        class="bg-tambouille-secondary-50 flex align-center justify-center p-3 rounded-lg"
+      >
+        <img src="../../../../assets/svg/filter.svg" alt="filter" />
+      </div>
+    </div>
+  </form>
+</div>

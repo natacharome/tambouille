@@ -1,0 +1,24 @@
+<main>
+  <app-header></app-header>
+  <app-search></app-search>
+  <app-season-card></app-season-card>
+  <app-title
+    title="Recettes"
+    subtitle="Intutives, sans dosages, 100% vegan"
+  ></app-title>
+  <div class="sm:px-6 lg:px-8 mt-5">
+    <div
+      class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4"
+    >
+      @for (recipe of (recipes$ | async); track recipe.id) {
+      <app-recipe-card
+        [id]="recipe.id"
+        [recipeImage]="recipe.image"
+        [recipeTitle]="recipe.title"
+        [time]="'12 min'"
+      >
+      </app-recipe-card>
+      }
+    </div>
+  </div>
+</main>

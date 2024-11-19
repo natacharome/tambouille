@@ -1,0 +1,12 @@
+<div class="flex flex-col items-center jus mb-5 mr-3">
+  <div class="bg-tambouille-secondary-100 rounded-full p-3 mb-2">
+    @switch (tag) { @case ('spicy') {
+    <img class="w-5 h-5" src="../../../../assets/svg/spicy.svg" /> } @case
+    ('economic') {
+    <img class="w-5 h-5" src="../../../../assets/svg/economic.svg" /> } @case
+    ('gluten-free') {
+    <img class="w-5 h-5" src="../../../../assets/svg/gluten-free.svg" /> }
+    @default { Default case. } }
+  </div>
+  <h4>{{ tag | tagToFrench }}</h4>
+</div>
